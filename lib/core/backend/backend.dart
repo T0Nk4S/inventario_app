@@ -473,6 +473,24 @@ class BackendService {
     }
   }
 
+  /// Devuelve un mapa simple productoId -> proveedorId (si existe) leyendo la colección Productos.
+  /// Útil para resolver qué proveedor está asociado a cada producto al calcular estadísticas.
+  Future<Map<String, String>> fetchProductSupplierMap() async {
+    try {
+      final snap = await _firestore.collection('Productos').get();
+      final Map<String, String> map = {};
+      for (final d in snap.docs) {
+        final data = d.data();
+        final prov = data['proveedor']?.toString() ?? '';
+        if (prov.isNotEmpty) map[d.id] = prov;
+      }
+      return map;
+    } catch (e) {
+      // fallback: no supplier mapping available in-memory
+      return <String, String>{};
+    }
+  }
+
   Future<List<String>> fetchUniqueBrands() async { return _productos.values.map((p) => p.marca.toUpperCase()).toSet().toList(); }
 
   Future<List<UserModel>> fetchUsers() async { return _profiles.values.toList(); }
