@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "185480174541",
+    "firebase_url": "https://bdagenda-8392a-default-rtdb.firebaseio.com",
+    "project_id": "bdagenda-8392a",
+    "storage_bucket": "bdagenda-8392a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185480174541:android:ec1487fb805a8b60a74284",
+        "android_client_info": {
+          "package_name": "com.example.inventario_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCujWJLVlE3onwTV9AqbqV8exnjOybxZOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
